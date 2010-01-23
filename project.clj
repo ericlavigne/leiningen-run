@@ -1,4 +1,4 @@
-(defproject leiningen-run "0.1"
+(defproject leiningen-run "0.2"
   :description "Leiningen plugin that adds a run task"
   :dependencies [[org.clojure/clojure "1.1.0-master-SNAPSHOT"]
 		 [org.clojure/clojure-contrib "1.1.0-master-SNAPSHOT"]
