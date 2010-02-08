@@ -3,11 +3,16 @@
   (:use [leiningen.compile :only [eval-in-project]]))
 
 (defn run [project & args]
-  (let [main-class (str (:main project))
-	main-fn "-main"]
-    (eval-in-project project
-		     `(do (require (symbol ~main-class))
-			  (apply (ns-resolve (symbol ~main-class) 
-					     (symbol ~main-fn)) 
-				 ~(vec args))))))
+  (eval-in-project 
+   project
+   (cond (:script project) `(do (require 'clojure.main)
+				(clojure.main/main "--init" 
+						   ~(:script project)
+						   ~@args))
+	 (:main project) (let [main-class (str (:main project))]
+			   `(do (require (symbol ~main-class))
+				(apply (ns-resolve (symbol ~main-class) 
+						   (symbol "-main")) 
+				       ~(vec args))))
+	 :else "leiningen-run requires that you set either :main or :script in project.clj.")))
 
