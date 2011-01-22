@@ -11,10 +11,9 @@ In order to use this plugin, you will need to specify a :main class and add lein
     (defproject island-wari "0.1"
       :description "Web application for playing the Island Wari game."
       :main wari
-      :dependencies     [[org.clojure/clojure "1.1.0-master-SNAPSHOT"]
-                         [org.clojure/clojure-contrib "1.1.0-master-SNAPSHOT"]
+      :dependencies     [[org.clojure/clojure "1.1.0"]
+                         [org.clojure/clojure-contrib "1.1.0"]
                          [org.clojars.liebke/compojure "0.3.1-master"]]
-      :dev-dependencies [[org.clojure/swank-clojure "1.0"]
-                         [leiningen-run "0.2"]])
+      :dev-dependencies [[leiningen-run "0.3"]])
  
 This plugin is available on [Clojars](http://clojars.org/leiningen-run).
