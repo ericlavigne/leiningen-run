@@ -1,3 +1,5 @@
+This plugin should no longer be used because similar capabilities have been [added to Leiningen](https://github.com/technomancy/leiningen/blob/master/src/leiningen/run.clj).
+
 This Leiningen plugin allows you to run your program.
 
     lein run
